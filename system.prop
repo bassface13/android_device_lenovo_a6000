@@ -1,0 +1,201 @@
+# Bare-bones system.prop
+
+ro.sf.lcd_density=320
+com.qc.hardware=true
+debug.qc.hardware=true
+ro.product.model=LenovoA6000-4gLTE-In
+ro.product.brand=lenovo
+ro.product.name=a6000
+ro.product.device=a6000
+ro.product.board=msm8916
+ro.product.cpu.abi=armeabi-v7a
+ro.product.cpu.abi2=armeabi
+ro.product.cpu.abilist=armeabi-v7a,armeabi
+ro.product.cpu.abilist32=armeabi-v7a,armeabi
+ro.product.cpu.abilist64=
+ro.product.manufacturer=lenovo
+ro.board.platform=msm8916
+ro.build.product=a6000
+
+#rild.libpath=/system/lib/libreference-ril.so
+rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
+rild.libargs=-d /dev/smd0
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+ril.subscription.types=NV,RUIM
+DEVICE_PROVISIONED=1
+
+# Start in cdma mode
+ro.telephony.default_network=17
+
+#ro.hdmi.enable=true
+#tunnel.decode=true
+#tunnel.audiovideo.decode=true
+#lpa.decode=false
+#lpa.use-stagefright=true
+#persist.speaker.prot.enable=false
+
+#
+# system props for the cne module
+#
+persist.cne.feature=4
+
+#
+# system props for the dpm module
+#
+persist.dpm.feature=3
+
+#system props for the MM modules
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-scan=true
+mmp.enable.3g2=true
+mm.enable.smoothstreaming=true
+mm.disable.sec_smoothstreaming=true
+media.aac_51_output_enabled=true
+#codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC DIVX DIVXHD
+mm.enable.qcom_parser=3407871
+
+#
+# system props for the data modules
+#
+ro.use_data_netmgrd=true
+persist.data.netmgrd.qos.enable=true
+
+#system props for time-services
+persist.timed.enable=true
+
+#
+# system prop for opengles version
+#
+# 196608 is decimal for 0x30000 to report version 3
+ro.opengles.version=196608
+
+# System property for cabl
+ro.qualcomm.cabl=0
+
+#
+# System props for telephony
+# System prop to turn on CdmaLTEPhone always
+telephony.lteOnCdmaDevice=0
+persist.omh.enabled=false
+
+#
+# System props for bluetooh
+# System prop to turn on hfp client
+bluetooth.hfp.client=1
+
+#
+#snapdragon value add features
+#
+ro.qc.sdk.audio.ssr=false
+##fluencetype can be "fluence" or "fluencepro" or "none"
+ro.qc.sdk.audio.fluencetype=none
+persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicerec=false
+persist.audio.fluence.speaker=true
+#Set for msm8916
+tunnel.audio.encode = false
+#Buffer size in kbytes for compress offload playback
+audio.offload.buffer.size.kb=32
+#use VERY_HIGH_QUALITY for audio resampler
+af.resampler.quality=4
+#Enable offload audio video playback by default
+av.offload.enable=false
+#enable voice path for PCM VoIP by default
+use.voice.path.for.pcm.voip=true
+#
+#System property for FM transmitter
+#
+ro.fm.transmitter=false
+#enable dsp gapless mode by default
+audio.offload.gapless.enabled=true
+
+#Audio voice concurrency related flags
+voice.playback.conc.disabled=true
+voice.record.conc.disabled=true
+voice.voip.conc.disabled=true
+
+#Set read only default composition for USB
+ro.sys.usb.default.config=diag,serial_smd,rmnet_bam,adb
+
+# set max background services
+ro.config.max_starting_bg=8
+
+#property to enable user to access Google WFD settings
+persist.debug.wfd.enable=1
+#propery to enable VDS WFD solution
+persist.hwc.enable_vds=1
+ro.min_freq=800000
+
+#PPPOE config enable
+ro.config.pppoe_enable=1
+
+#caiyebo@201420140804 for lenovo ROM/RAM/CPU info
+ro.lenovo.cpucore = 4
+ro.lenovo.cpuspeed = 1.2GHZ
+ro.lenovo.ram = 1GB
+ro.lenovo.rom = 8GB
+#caiyebo@201420140804 for lenovo ROM/RAM/CPU info
+
+#wt custom bluetooth name
+ro.bluetooth.name=LENOVO-BT
+#wt custom bluetooth name
+
+#wt custom default
+ro.lenovo.cta=false
+ro.lenovo.device=phone
+ro.lenovo.sim=dsds
+ro.lenovo.operator=open
+ro.lenovo.platform=qualcomm
+ro.lenovo.bqb=no
+ro.lenovo.wificert=no
+ro.lenovo.signalbars=five
+ro.lenovo.adb=apkctl
+ro.lenovo.series=Lenovo A6000
+
+#
+# ADDITIONAL_BUILD_PROPERTIES
+#
+persist.radio.multisim.config=dsds
+ro.com.android.mobiledata=false
+ro.vendor.extension_library=/vendor/lib/libqc-opt.so
+persist.sys.logkit.ctrlcode=0
+persist.backgrounddata.enable=false
+persist.lenovo.ltetype=SGLTE
+swe.reverie_text_shaper=1
+persist.gps.qc_nlp_in_use=1
+persist.loc.nlp_name=com.qualcomm.services.location
+ro.gps.agps_provider=1
+ro.pip.gated=0
+persist.radio.calls.on.ims=0
+persist.radio.jbims=0
+persist.radio.csvt.enabled=false
+persist.radio.custom_ecc=1
+persist.radio.rat_on=combine
+persist.radio.mt_sms_ack=20
+
+#
+# Properties to overwrite (Default)
+#
+
+# disable "keep SIM alive" in LPM feature
+persist.radio.apm_sim_not_pwdn=0
+
+# enable restoring mode_pref when manual select network with rat
+persist.radio.restore_mode_pref=1
+
+persist.env.c.phone.matchnum=11
+
+
+
