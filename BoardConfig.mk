@@ -46,7 +46,7 @@ BOARD_KERNEL_SEPARATED_DT := true
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 TARGET_KERNEL_SOURCE := kernel/lenovo/a6000
-TARGET_KERNEL_CONFIG := msm8916_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_msm8916_defconfig
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 
@@ -119,8 +119,8 @@ TARGET_POWERHAL_VARIANT := qcom
 # RIL
 
 # SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/lenovo/a6000/sepolicy
+#BOARD_SEPOLICY_DIRS += \
+#    device/lenovo/a6000/sepolicy
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
