@@ -14,7 +14,6 @@
 # limitations under the License.
 #
 
-USE_CAMERA_STUB := false
 LOCAL_PATH := device/lenovo/a6000
 
 -include vendor/lenovo/a6000/BoardConfigVendor.mk
@@ -27,14 +26,20 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8916
 TARGET_NO_BOOTLOADER := true
 
 # Architecture
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_SMP := true
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := generic
 
 
 #Kernel
@@ -46,7 +51,7 @@ BOARD_KERNEL_SEPARATED_DT := true
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 TARGET_KERNEL_SOURCE := kernel/lenovo/a6000
-TARGET_KERNEL_CONFIG := cyanogenmod_msm8916_defconfig
+TARGET_KERNEL_CONFIG := msm8916_defconfig
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 
