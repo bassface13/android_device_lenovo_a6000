@@ -21,11 +21,17 @@ LOCAL_PATH := device/lenovo/a6000
 TARGET_BOARD_PLATFORM := msm8916
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno306
 
+USE_CAMERA_STUB := false
+BOARD_USES_GENERIC_AUDIO := true
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8916
 TARGET_NO_BOOTLOADER := true
+TARGET_NO_RADIOIMAGE := true
+TARGET_NO_KERNEL := false
 
 # Architecture
+TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
@@ -34,6 +40,9 @@ TARGET_CPU_VARIANT := cortex-a53
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+TARGET_HAVE_HDMI_OUT := false
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 #Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
@@ -57,9 +66,7 @@ BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # Bluetooth
 
-# Camera
-TARGET_USE_VENDOR_CAMERA_EXT := true
-USE_DEVICE_SPECIFIC_CAMERA := true
+#camera
 
 # Crypto
 #TARGET_HW_DISK_ENCRYPTION := true
@@ -76,6 +83,12 @@ TARGET_CONTINUOUS_SPLASH_ENABLED := true
 
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
+# Enable suspend during charger mode
+BOARD_CHARGER_ENABLE_SUSPEND := true
+
+# Add NON-HLOS files for ota upgrade
+ADD_RADIO_FILES ?= true
+
 # FM
 TARGET_QCOM_NO_FM_FIRMWARE := false
 
@@ -86,6 +99,9 @@ ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
 
 # Lights
+
+# Liblight
+TARGET_PROVIDES_LIBLIGHT := true
 
 # Media
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
