@@ -21,8 +21,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product-if-exists, vendor/lenovo/a6000/a6000-vendor.mk)
 
 # Ramdisk
- PRODUCT_COPY_FILES += \
-     $(call find-copy-subdir-files,*,${LOCAL_PATH}/ramdisk)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ramdisk/etc/dpm/fdMgr/fd.conf:system/etc/dpm/fdMgr/fd.conf
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
